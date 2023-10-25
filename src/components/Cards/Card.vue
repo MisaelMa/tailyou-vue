@@ -8,12 +8,11 @@
       />
     </div>
 
-    <!-- Agregar el slot aquí -->
-    <slot></slot>
-
     <div :class="cardTitle({ variantTitle, sizeTitle })">
       {{ title }}
     </div>
+
+    <slot></slot>
   </div>
 </template>
 
