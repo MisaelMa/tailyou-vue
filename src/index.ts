@@ -12,6 +12,8 @@ export {
   Select,
   Sidebar,
   IFile,
+  Lista,
+  CardList
 } from "./components";
 
 /* export default {

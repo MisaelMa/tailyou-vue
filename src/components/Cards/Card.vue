@@ -3,7 +3,6 @@
     <div>
       <img
         :src="imageUrl"
-        alt="Imagen del producto"
         :class="cardImage({ variantImage, sizeImage })"
       />
     </div>
