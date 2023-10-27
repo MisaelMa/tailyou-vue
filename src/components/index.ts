@@ -15,3 +15,7 @@ export { default as Select } from "./Select/T-select.vue";
 export { default as Sidebar } from "./Sidebar/T-Sidebar.vue";
 
 export { default as IFile } from "./IFile/T-IFile.vue";
+
+export { default as Lista } from "./Lista/Lista.vue"
+
+export { default as CardList } from "./Lista/CardList.vue"
