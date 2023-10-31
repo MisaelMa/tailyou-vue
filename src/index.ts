@@ -12,7 +12,12 @@ export {
   Select,
   Sidebar,
   IFile,
+<<<<<<< HEAD
   Carousels,
+=======
+  Lista,
+  CardList
+>>>>>>> 962f4134bf2072447ecfbeef40b73e1ce1353fdb
 } from "./components";
 
 /* export default {

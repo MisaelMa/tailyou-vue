@@ -16,4 +16,10 @@ export { default as Sidebar } from "./Sidebar/T-Sidebar.vue";
 
 export { default as IFile } from "./IFile/T-IFile.vue";
 
+<<<<<<< HEAD
 export { default as Carousels } from "./Carousels/T-Carousels.vue";
+=======
+export { default as Lista } from "./Lista/Lista.vue"
+
+export { default as CardList } from "./Lista/CardList.vue"
+>>>>>>> 962f4134bf2072447ecfbeef40b73e1ce1353fdb
