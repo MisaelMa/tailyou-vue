@@ -15,3 +15,5 @@ export { default as Select } from "./Select/T-select.vue";
 export { default as Sidebar } from "./Sidebar/T-Sidebar.vue";
 
 export { default as IFile } from "./IFile/T-IFile.vue";
+
+export { default as Carousels } from "./Carousels/T-Carousels.vue";

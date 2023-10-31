@@ -12,6 +12,7 @@ export {
   Select,
   Sidebar,
   IFile,
+  Carousels,
 } from "./components";
 
 /* export default {
