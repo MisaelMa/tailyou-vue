@@ -13,7 +13,9 @@ export {
   Sidebar,
   IFile,
   Lista,
-  CardList
+  CardList,
+  Car,
+  AddCar
 } from "./components";
 
 /* export default {
