@@ -15,6 +15,8 @@ export {
   Carousels,
   Lista,
   CardList,
+  Car,
+  AddCar,
 } from "./components";
 
 /* export default {
