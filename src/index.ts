@@ -12,10 +12,11 @@ export {
   Select,
   Sidebar,
   IFile,
+  Carousels,
   Lista,
   CardList,
   Car,
-  AddCar
+  AddCar,
 } from "./components";
 
 /* export default {
