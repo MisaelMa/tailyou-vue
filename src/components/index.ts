@@ -19,3 +19,7 @@ export { default as IFile } from "./IFile/T-IFile.vue";
 export { default as Lista } from "./Lista/Lista.vue"
 
 export { default as CardList } from "./Lista/CardList.vue"
+
+export { default as Car } from "./Car/Car.vue"
+
+export { default as AddCar } from "./AddCar/AddCar.vue";
