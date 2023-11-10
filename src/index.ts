@@ -17,6 +17,9 @@ export {
   CardList,
   Car,
   AddCar,
+  headerCard,
+  spanPoint,
+  ItemList,
 } from "./components";
 
 /* export default {

@@ -25,3 +25,9 @@ export { default as CardList } from "./Lista/CardList.vue";
 export { default as Car } from "./Car/Car.vue";
 
 export { default as AddCar } from "./AddCar/AddCar.vue";
+
+export { default as headerCard } from "./HeaderCard/T-headerCard.vue";
+
+export { default as spanPoint } from "./SpanPoint/T-spanPoint.vue";
+
+export { default as ItemList } from "./ItemList/T-itemList.vue";
