@@ -26,8 +26,26 @@ export { default as Car } from "./Car/Car.vue";
 
 export { default as AddCar } from "./AddCar/AddCar.vue";
 
-export { default as headerCard } from "./HeaderCard/T-headerCard.vue";
+export { default as headerCard } from "./Cards/T-headerCard.vue";
 
 export { default as spanPoint } from "./SpanPoint/T-spanPoint.vue";
 
 export { default as ItemList } from "./ItemList/T-itemList.vue";
+
+export { default as HeaderList } from "./ItemList/T-headerList.vue";
+
+export { default as cardContent } from "./Cards/T-contentCard.vue";
+
+export { default as Input } from "./Imputs/T-imputs.vue";
+
+export { default as ToolTexBar } from "./Toolbars/T-toolBar.vue";
+
+export { default as InputImageBox } from "./Imputs/T-inputsImageBox.vue";
+
+export { default as InputImageCamera } from "./Imputs/T-inputImageCamera.vue";
+
+export { default as InputTextArea } from "./Imputs/T-inputTexArea.vue";
+
+export { default as CheckBox } from "./CheckBox/T-checkBox.vue";
+
+export { default as SwitchVertical } from "./Switches/T-switchVertical.vue";
