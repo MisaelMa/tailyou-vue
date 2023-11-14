@@ -35,7 +35,6 @@
       </button>
     </nav>
   </div>
-  <div>{{ currentPage }}</div>
 </template>
 
 <script setup lang="ts">

@@ -2,12 +2,12 @@
   <label
     v-if="label"
     for="countries"
-    class="block mb-2 text-sm font-medium text-gray-900"
+    class="block mb-1 text-sm font-medium text-gray-900"
     >{{ label }}</label
   >
   <select
     id="countries"
-    class="  bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block mx-4 p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:border-blue-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
     @change="onChange"
   >
     <option :selected="localSelect" disabled readonly>
