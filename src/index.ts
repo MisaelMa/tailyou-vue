@@ -29,6 +29,7 @@ export {
   CheckBox,
   SwitchVertical,
   HeaderList,
+  Chip,
 } from "./components";
 
 /* export default {
