@@ -51,3 +51,5 @@ export { default as CheckBox } from "./CheckBox/T-checkBox.vue";
 export { default as SwitchVertical } from "./Switches/T-switchVertical.vue";
 
 export { default as Chip } from "./Chips/T-chip.vue";
+
+export { default as Dialog } from "./Dialogs/T-dialog.vue";

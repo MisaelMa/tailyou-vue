@@ -4,7 +4,7 @@
       {{ label }}
     </label>
 
-    <div class="relative">
+    <div>
       <input
         :type="inputType"
         id="yourInput"
@@ -13,6 +13,7 @@
         :inputmode="inputType === 'number' ? 'numeric' : 'text'"
         class="pr-10"
         :disabled="isDisabled"
+        v-model="inputValue"
       />
 
       <span :class="auxilaryInput({ variant: variantAuxilary })">
@@ -24,14 +25,14 @@
 
 <script setup lang="ts">
 import { cva, type VariantProps } from "class-variance-authority";
-import { defineProps } from "vue";
+import { defineProps, ref, watch } from "vue";
 import { input, labelInput, auxilaryInput } from "@tailyou/cva";
 
 type PropsInput = VariantProps<typeof input>;
 type PropsLabelImput = VariantProps<typeof labelInput>;
 type PropsAuxilaryInput = VariantProps<typeof auxilaryInput>;
 
-defineProps<{
+const props = defineProps<{
   variantInput?: PropsInput["variant"];
   variantLabel?: PropsLabelImput["variant"];
   variantAuxilary?: PropsAuxilaryInput["variant"];
@@ -40,7 +41,17 @@ defineProps<{
   inputType?: string;
   auxilary?: string;
   isDisabled?: boolean;
+  value?: string;
 }>();
+
+const inputValue = ref(props.value);
+
+watch(
+  () => props.value,
+  (newValue) => {
+    inputValue.value = newValue;
+  }
+);
 </script>
 <style scoped>
 input[type="number"]::-webkit-inner-spin-button,
