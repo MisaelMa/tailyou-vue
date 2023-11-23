@@ -4,12 +4,12 @@
       <thead :class="THeader({ Vheader })">
         <tr :class="TTr({ Vtr })">
           <th v-for="(header, index) in headers" :class="TTh({ Vth })">
-            <template v-if="!$slots[header.text]">
+            <template v-if="!$slots[header.text]" class="m-2">
               {{ header.text }}
             </template>
             <slot :name="header.text" :index="index" :item="header"></slot>
-            <span v-if="header.text === 'site.types'" class="arrow-down-icon">
-              <i class="bi bi-chevron-down"></i>
+            <span v-if="header.text === 'site.types'">
+              
             </span>
           </th>
         </tr>
@@ -18,7 +18,7 @@
       <tbody :class="TBody({ Vbody })">
         <tr v-for="(items, i) in data">
           <td v-for="head in headers" :class="TTd({ Vtd })">
-            <template v-if="!$slots[head.value]">
+            <template v-if="!$slots[head.value]" class="m-2">
               {{ items[head.value] }}
             </template>
             <slot :name="head.value" :index="i" :item="items"></slot>
