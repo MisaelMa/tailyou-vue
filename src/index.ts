@@ -31,6 +31,7 @@ export {
   HeaderList,
   Chip,
   Dialog,
+  SwitchCase,
 } from "./components";
 
 /* export default {

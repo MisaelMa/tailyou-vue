@@ -53,3 +53,5 @@ export { default as SwitchVertical } from "./Switches/T-switchVertical.vue";
 export { default as Chip } from "./Chips/T-chip.vue";
 
 export { default as Dialog } from "./Dialogs/T-dialog.vue";
+
+export { default as SwitchCase } from "./Switches/T-switchCase.vue";
