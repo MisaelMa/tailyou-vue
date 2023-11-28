@@ -36,15 +36,15 @@ export { default as HeaderList } from "./ItemList/T-headerList.vue";
 
 export { default as cardContent } from "./Cards/T-contentCard.vue";
 
-export { default as Input } from "./Imputs/T-input.vue";
+export { default as Input } from "./Inputs/T-input.vue";
 
 export { default as ToolTexBar } from "./Toolbars/T-toolBar.vue";
 
-export { default as InputImageBox } from "./Imputs/T-inputsImageBox.vue";
+export { default as InputImageBox } from "./Inputs/T-inputsImageBox.vue";
 
-export { default as InputImageCamera } from "./Imputs/T-inputImageCamera.vue";
+export { default as InputImageCamera } from "./Inputs/T-inputImageCamera.vue";
 
-export { default as InputTextArea } from "./Imputs/T-inputTexArea.vue";
+export { default as InputTextArea } from "./Inputs/T-inputTexArea.vue";
 
 export { default as CheckBox } from "./CheckBox/T-checkBox.vue";
 
