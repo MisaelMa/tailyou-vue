@@ -36,7 +36,7 @@ export { default as HeaderList } from "./ItemList/T-headerList.vue";
 
 export { default as cardContent } from "./Cards/T-contentCard.vue";
 
-export { default as Input } from "./Imputs/T-imputs.vue";
+export { default as Input } from "./Imputs/T-input.vue";
 
 export { default as ToolTexBar } from "./Toolbars/T-toolBar.vue";
 
