@@ -3,13 +3,10 @@
     <div :class="headerTitle({ variant: variantTitle })">{{ Title }}</div>
     <div>
       <div :class="spaceOption({ variant: variantSpOption })">
-        <div
-          v-for="(link, index) in headerLinks"
-          :key="index"
+        <slot name="actions"
           :class="headerOption({ variant: variantOption })"
         >
-          <a href="#">{{ link.text }}</a>
-        </div>
+        </slot>
       </div>
     </div>
   </div>
@@ -38,9 +35,5 @@ defineProps<{
   variantSpOption?: PropsHeaderSpaceOption["variant"];
 
   Title?: string;
-  headerLinks?: {
-    text: string;
-    href: string;
-  }[];
 }>();
 </script>

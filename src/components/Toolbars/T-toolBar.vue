@@ -60,7 +60,7 @@
       </div>
     </div>
     <textarea
-      v-model="text"
+      v-model="inputValue"
       id="texarea"
       name="texarea"
       rows="1"
@@ -78,7 +78,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import { cva, type VariantProps } from "class-variance-authority";
 import { Camera } from "lucide-vue-next";
 import {
@@ -104,13 +104,23 @@ type PropSIcon = VariantProps<typeof iconToolArea>;
 type PropSeparate = VariantProps<typeof separateToolArea>;
 type PropTextArea = VariantProps<typeof textToolArea>;
 
-defineProps<{
+const props = defineProps<{
   VariantConeiner?: PropConteiner["variant"];
   VariantIcon?: PropSIcon["variant"];
   VariantSeárate?: PropSeparate["variant"];
   VariantTextArea?: PropTextArea["variant"];
   labelTextArea?: string;
+  value?: string;
 }>();
+
+const inputValue = ref(props.value);
+
+watch(
+  () => props.value,
+  (newValue) => {
+    inputValue.value = newValue;
+  }
+);
 const text = ref("");
 const isBold = ref(false);
 const isItalic = ref(false);

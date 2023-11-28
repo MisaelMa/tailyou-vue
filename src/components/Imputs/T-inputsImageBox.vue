@@ -1,7 +1,7 @@
 <template>
   <label
     for="imageUpload"
-    :class="inputImgBox({ variant: VariantInputImgBox })"
+    :class="inputImgBox({ variant: variant })"
   >
     <span><slot> </slot></span>
   </label>
@@ -14,6 +14,6 @@ import { cva, type VariantProps } from "class-variance-authority";
 type PropConInputImgBox = VariantProps<typeof inputImgBox>;
 
 defineProps<{
-  VariantInputImgBox?: PropConInputImgBox["variant"];
+  variant?: PropConInputImgBox["variant"];
 }>();
 </script>

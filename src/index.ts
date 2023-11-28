@@ -30,6 +30,8 @@ export {
   SwitchVertical,
   HeaderList,
   Chip,
+  Dialog,
+  SwitchCase,
 } from "./components";
 
 /* export default {
