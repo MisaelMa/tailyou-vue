@@ -1,29 +1,37 @@
 <template>
   <div class="mb-4">
-    <label  v-if="label" :for="getFor" :class="labelInput({ variant: variantLabel })">
+    <label
+      v-if="label"
+      :for="getFor"
+      :class="labelInput({ variant: variantLabel })"
+    >
       {{ label }}
     </label>
 
-    <div>
-      <!-- :inputmode="type === 'number' ? 'numeric' : 'text'" -->
+    <div class="relative grid">
       <input
         :type="type"
         :id="getFor"
         v-model="value"
         :placeholder="placeholder"
-        :class="classInput({ variant: variantInput })"       
+        :class="classInput({ variant: variantInput })"
         class="pr-10"
         :disabled="disabled"
         :name="name"
         @input="input"
-        v-bind:class="{ 
-        'is-invalid': errorMessage,
-        'is-valid': meta.valid && rule
-      }"
+        v-bind:class="{
+          [classInput({ variant: 'inValid' })]: errorMessage,
+          [classInput({ variant: 'isValid' })]: meta.valid && rule,
+        }"
       />
 
-      <div class="valid-feedback">Looks good!</div>
-    <div class="invalid-feedback">{{errorMessage}}</div>
+      <div
+        v-if="meta.valid && rule"
+        :class="labelInput({ variant: 'isValid' })"
+      >
+        Looks good!
+      </div>
+      <div :class="labelInput({ variant: 'inValid' })">{{ errorMessage }}</div>
       <span :class="auxilaryInput({ variant: variantAuxilary })">
         <slot>{{ auxilary }}</slot></span
       >
@@ -33,10 +41,10 @@
 
 <script setup lang="ts">
 import { cva, type VariantProps } from "class-variance-authority";
-import { defineProps, ref, watch , defineEmits } from "vue";
+import { defineProps, ref, watch, defineEmits } from "vue";
 import { input as classInput, labelInput, auxilaryInput } from "@tailyou/cva";
-import{ useUtils}from "@/utils/useUtils"
-import { useField } from 'vee-validate';
+import { useUtils } from "@/utils/useUtils";
+import { useField } from "vee-validate";
 type PropsInput = VariantProps<typeof classInput>;
 type PropsLabelInput = VariantProps<typeof labelInput>;
 type PropsAuxilaryInput = VariantProps<typeof auxilaryInput>;
@@ -51,34 +59,35 @@ const props = defineProps<{
   auxilary?: string;
   disabled?: boolean;
   modelValue: {
-    required: false,
-    default: "",
-  },
-  name: string,
-  id: string,
-  rule: [String, Object],
+    required: false;
+    default: "";
+  };
+  name: string;
+  id: string;
+  rule: [String, Object];
 }>();
 
-
-const { getFor } = useUtils({id:props.id})
+const { getFor } = useUtils({ id: props.id });
 
 const emit = defineEmits(["update:modelValue"]);
 
 const input = (data) => {
-  if (data.target.type === 'file') {
-     const selectedFile = data.target.files;
-    emit("update:modelValue", selectedFile);   
+  if (data.target.type === "file") {
+    const selectedFile = data.target.files;
+    emit("update:modelValue", selectedFile);
   } else {
     emit("update:modelValue", data.target.value);
   }
 };
 
-const { errorMessage, meta, value } = useField(props.name, props.rule ? props.rule : { required: false,validate: false }, {
-  uncheckedValue: false,
-  validateOnMount: true,
- });
-
-
+const { errorMessage, meta, value } = useField(
+  props.name,
+  props.rule ? props.rule : { required: false, validate: false },
+  {
+    uncheckedValue: false,
+    validateOnMount: true,
+  }
+);
 </script>
 <style scoped>
 input[type="number"]::-webkit-inner-spin-button,
