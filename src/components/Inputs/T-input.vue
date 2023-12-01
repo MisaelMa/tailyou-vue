@@ -19,19 +19,22 @@
         :disabled="disabled"
         :name="name"
         @input="input"
+        @blur="onBlur"
         v-bind:class="{
-          [classInput({ variant: 'inValid' })]: errorMessage,
-          [classInput({ variant: 'isValid' })]: meta.valid && rule,
+          [classInput({ variant: 'inValid' })]: isTouched && errorMessage,
+          [classInput({ variant: 'isValid' })]: isTouched && meta.valid && rule,
         }"
       />
 
       <div
-        v-if="meta.valid && rule"
+        v-if="isTouched && meta.valid && rule"
         :class="labelInput({ variant: 'isValid' })"
       >
         Looks good!
       </div>
-      <div :class="labelInput({ variant: 'inValid' })">{{ errorMessage }}</div>
+      <div v-if="isTouched" :class="labelInput({ variant: 'inValid' })">
+        {{ errorMessage }}
+      </div>
       <span :class="auxilaryInput({ variant: variantAuxilary })">
         <slot>{{ auxilary }}</slot></span
       >
@@ -78,6 +81,12 @@ const input = (data) => {
   } else {
     emit("update:modelValue", data.target.value);
   }
+};
+
+const isTouched = ref(false);
+
+const onBlur = () => {
+  isTouched.value = true;
 };
 
 const { errorMessage, meta, value } = useField(
